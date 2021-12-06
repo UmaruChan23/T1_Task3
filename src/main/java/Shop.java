@@ -10,7 +10,12 @@ public class Shop {
         int buyerCount;
 
         if (args.length > 0) {
-            buyerCount = Integer.parseInt(args[0]);
+            if(Integer.parseInt(args[0]) > 0) {
+                buyerCount = Integer.parseInt(args[0]);
+            } else {
+                System.out.println("Количество покупателей должно быть больше 0");
+                return;
+            }
         } else {
             System.out.println("Введите количество покупателей");
             return;

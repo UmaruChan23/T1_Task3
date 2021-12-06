@@ -3,11 +3,11 @@ package entity;
 import java.util.concurrent.Phaser;
 
 public class Buyer implements Runnable {
-    private int id;
+    private final int id;
     private int goodsCount;
     private int numberOfPurchases;
-    private Warehouse warehouse;
-    private Phaser barrier;
+    private final Warehouse warehouse;
+    private final Phaser barrier;
 
     public Buyer(int id, Warehouse warehouse, Phaser barrier) {
         this.id = id;
@@ -33,7 +33,6 @@ public class Buyer implements Runnable {
         }
     }
 
-    @Override
     public String toString() {
         return "Покупатель " + id + "\n" +
                 "Количество купленного товара: " + goodsCount + "\n" +
